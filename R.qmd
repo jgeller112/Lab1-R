@@ -1,0 +1,183 @@
+---
+title: "R Lab"
+author: "Student Name"
+format:
+      html:
+        code-fold: true
+        toc: true
+editor: visual
+execute: 
+  message: false
+  warning: false
+---
+
+# Lab 1 - R
+
+## Packages:
+
+-   Load `tidyverse` package
+-   Load `here` package
+
+## Basic math and commands:
+
+-   Try adding more than two numbers
+-   Try playing around with the number of spaces between numbers and the plus sign Do the number of spaces matter?
+-   Try hitting enter when you are half way through the command (eg, 10+) What happens?
+-   Multiply 3 by 14 and subtract 5 from the result
+-   Raise 5 to the power of 4 (hint: use \^ for exponents)
+-   Divide 267563 by 1235
+
+## Logical Operators:
+
+-   Use logical operations to get R to agree that "two plus two equals five" is FALSE
+-   Use logical operations to test whether 8 raised to the power 13 is less than 15 \^ 9
+
+## Functions:
+
+-   Use the sqrt() function to calculate the square root of 789
+-   Round 2456 to the nearest whole number using round()
+-   Round 2456 to two decimal places using round()
+-   R has a factorial() function that calculates the factorial function, n! (eg, 5! = 5\*4\*3\*2\*1) Use it to calculate 25!, and take note of the way that R formats the answer
+-   Use factorial() to (try to) calculate 2000!, and note the answer that R gives
+-   Create a function called `get_factorial` that returns the factorial of a number. Try to write in a warning if negative numbers are used.
+
+## Variables:
+
+-   Create a variable called potato whose value corresponds to the number of potatoes you've eaten in the last week Or something equally ridiculous
+-   Print out the value of potato by typing the variable name
+-   Do it again using the print() function
+-   Calculate the square root of potato using the sqrt() function
+-   Print out the value of potato again to verify that the value of potato hasn't changed
+-   Reassign the value of potato to potato \* 2
+-   Print out the new value of potato to verify that it has changed
+-   Try making a character (string) variable (cheese) and a logical variable (happiness)
+-   Try creating a variable with a "missing" value NA
+
+## Vectors:
+
+-   Create a numeric vector with three elements using c()
+-   Create a character vector with three elements using c()
+    -   Combine these two vectors
+-   Create a numeric vector called age whose elements contain the ages of three people you know, where the names of each element correspond to the names of those people
+-   Use indexing to get R to print out the first element of one of the vectors you created
+-   Use negative indices to get R to print out everything except the first element of that vector
+-   Use logical indexing to return all the ages of all people in age greater than 20
+-   Use indexing by name to return the age of one of the people whose ages you've stored in age
+
+## Data frames/tibbles:
+
+-   We'll use one of the data frames that comes bundled with R, rather than trying to create a new one The `airquality` data frame contains 153 cases and 6 variables You can't actually see it in the workspace because R is storing it in a "hidden" location (sort of) Type airquality at the command line to see what it looks like
+
+    -   Use data(airquality) to load the data into your environment
+
+    -   Use `pull` and `select` to print out the `Wind` variable in `airquality`
+
+    -   Print out the third element of the `Wind`variable
+
+    -   Create a new tibble called aq that includes only the first 10 cases
+
+    -   Use logical indexing to print out all days (ie cases) in `aq` where the Ozone level was higher than 20
+
+        -   What did the output do with NA values?
+
+    -   Use filter to do the same thing Notice the difference in the output
+
+    -   Create a `too_windy` variable inside `aq`, which is a logical variable that is TRUE if Windy is greater than 10, and FALSE otherwise
+
+    -   Delete `too_windy`
+
+## Lists
+
+```{r}
+veclist <- list(x=1:5, y=2:6, z=3:7)
+
+```
+
+-   Add another variable to the above list which is the same length as the others
+
+-   Pull the first vector from the list
+
+-   Pull the y vector from the list by name
+
+## Files:
+
+-   Import the Excel file provided on OSF using this url (https://osfio/jse8h) and print first 6 rows of data (hint: you need to find a package to do this for you)
+
+-   Using the `here` package load the csv file above and print first 6 rows of data
+
+## Manipulating data
+
+-   Check to see if you have the `mtcars` dataset
+
+```{r}
+
+```
+
+-   What class is `mtcars`?
+
+```{r}
+
+```
+
+-   How many observations (rows) and variables (columns) are in the `mtcars` dataset?
+
+```{r}
+
+```
+
+-   Copy mtcars into an object called cars and rename `mpg` in cars to `MPG` Use the `rename` function (?rename)
+
+```{r}
+```
+
+-   Convert the column names of `cars` to all upper case
+
+```{r}
+
+
+
+```
+
+-   Filter the columns from `cars` that end in `"p"` and call it `pvars`
+
+```{r}
+
+```
+
+-   Create a subset of the data that only contains the columns: `wt`, `qsec`, and `hp` and assign this object to `carsSub`
+
+-   what are the dimensions of this dataset?
+
+```{r}
+
+```
+
+-   Filter the rows of cars that get more than 20 miles per gallon (`mpg`) of fuel efficiency - how many are there?
+
+```{r}
+
+```
+
+-   Filter the rows that get less than 16 miles per gallon (`mpg`) of fuel efficiency and have more than 100 horsepower (`hp`) - how many are there?
+
+```{r}
+
+
+```
+
+-   Re-order the rows of `carsSub` by weight in increasing order Use `arrange()`
+
+```{r}
+
+
+```
+
+-   Create a new variable in `carsSub` called `wt2`, which is equal to `wt^2`, using `mutate()` Use piping `%>%`:
+
+```{r}
+
+```
+
+## Github:
+
+-   When done, commit your assignment (with the message "Finished Lab 1") and push it to your Github repository. You need to upload a rendered version of the qmd file in html (click render above)
