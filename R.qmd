@@ -13,6 +13,7 @@ execute:
 
 # Lab 1 - R
 
+After each problem, comment what your code does
 
 ## Packages:
 
@@ -58,129 +59,60 @@ execute:
 
 -   Create a numeric vector with three elements using c()
 -   Create a character vector with three elements using c()
-    -   Combine these two vectors
 -   Create a numeric vector called age whose elements contain the ages of three people you know, where the names of each element correspond to the names of those people
 -   Use indexing to get R to print out the first element of one of the vectors you created
 -   Use negative indices to get R to print out everything except the first element of that vector
 -   Use logical indexing to return all the ages of all people in age greater than 20
 -   Use indexing by name to return the age of one of the people whose ages you've stored in age
 
-## Data frames/tibbles:
+## Manipualting data frames/tibbles
 
--   We'll use one of the data frames that comes bundled with R, rather than trying to create a new one The `airquality` data frame contains 153 cases and 6 variables You can't actually see it in the workspace because R is storing it in a "hidden" location (sort of) Type airquality at the command line to see what it looks like
+We will be working with a dataset from the “Kaggle” website, which hosts competitions for prediction and machine learning. More details on this dataset are here: https://www.kaggle.com/c/DontGetKicked/overview/background
 
-    -   Use data(airquality) to load the data into your environment
+- Bring the dataset into R. The dataset is located at: https://jhudatascience.org/intro_to_r/data/kaggleCarAuction.csv. You can use the link, download it, or use whatever method you like for getting the file. Once you get the file, read the dataset in using read_csv() and assign it the name cars.
 
-    -   Use `pull` and `select` to print out the `Wind` variable in `airquality`
+- import the data “dictionary” from https://jhudatascience.org/intro_to_r/data/Carvana_Data_Dictionary_formatted.txt. Use the read_tsv() function and assign it the name “key”.
 
-    -   Print out the third element of the `Wind`variable
+- Preview the data so that you can see the names of the columns. There are several possible functions to do this.
+Determine the class of the first three columns using str().
 
-    -   Create a new tibble called aq that includes only the first 10 cases
+- How many cars (rows) are in the dataset? How many variables (columns) are recorded for each car?
 
-    -   Use logical indexing to print out all days (ie cases) in `aq` where the Ozone level was higher than 20
+-  Filter out (i.e., remove) any vehicles that cost less than or equal to $5000 (“VehBCost”) or that have missing values. Replace the original “cars” object by reassigning the new filtered dataset to “cars_filt”. How many vehicles are left after filtering?
 
-        -   What did the output do with NA values?
+- From this point on, work with the filtered “cars_filt” dataset from the above question. Given the average car loan today is 70 months, create a new variable (column) called “MonthlyPrice” that shows the monthly cost for each car (Divide “VehBCost” by 70). Check to make sure the new column is there.
 
-    -   Use filter to do the same thing Notice the difference in the output
+- What is the range of the manufacture year (“VehYear”) of the vehicles?
 
-    -   Create a `too_windy` variable inside `aq`, which is a logical variable that is TRUE if Windy is greater than 10, and FALSE otherwise
+- How many different vehicle manufacturers/makes (“Make”) are there?
 
-    -   Delete `too_windy`
+-  How many different vehicle models (“Model”) are there?
+
+- Which vehicle color group had the highest mean acquisition cost paid for the vehicle at time of purchase, and what was this cost?
+
+Hint: Use group_by() with summarize(). To determine the column that corresponds to “acquisition cost paid for the vehicle at time of purchase”, check the “key” corresponding to the data dictionary that you imported above.
+
+  - Extend on the code you wrote. Use the arrange() function to sort the output by mean acquisition cost.
+
+-  Select all columns in “cars_filt” where the column names starts with “Veh”. Then,  summarize across these columns
+
+- Using “cars_filt”, create a new binary (TRUEs and FALSEs) column to indicate if the car has an automatic transmission. Call the new column “is_automatic”.
 
 ## Lists
 
 ```{r}
 veclist <- list(x=1:5, y=2:6, z=3:7)
-
 ```
 
 -   Add another variable to the above list which is the same length as the others
 
--   Pull the first vector from the list
+- Grab the first vector from the list
 
--   Pull the y vector from the list by name
+- Grab the y vector from the list by name
 
-## Files:
-
--   Import the Excel file provided on OSF using this url (https://osfio/jse8h) and print first 6 rows of data (hint: you need to find a package to do this for you)
-
--   Using the `here` package load the csv file above and print first 6 rows of data
-
-## Manipulating data
-
--   Check to see if you have the `mtcars` dataset
-
-```{r}
-
-```
-
--   What class is `mtcars`?
-
-```{r}
-
-```
-
--   How many observations (rows) and variables (columns) are in the `mtcars` dataset?
-
-```{r}
-
-```
-
--   Copy mtcars into an object called cars and rename `mpg` in cars to `MPG` Use the `rename` function (?rename)
-
-```{r}
-```
-
--   Convert the column names of `cars` to all upper case
-
-```{r}
-
-
-
-```
-
--   Filter the columns from `cars` that end in `"p"` and call it `pvars`
-
-```{r}
-
-```
-
--   Create a subset of the data that only contains the columns: `wt`, `qsec`, and `hp` and assign this object to `carsSub`
-
--   what are the dimensions of this dataset?
-
-```{r}
-
-```
-
--   Filter the rows of cars that get more than 20 miles per gallon (`mpg`) of fuel efficiency - how many are there?
-
-```{r}
-
-```
-
--   Filter the rows that get less than 16 miles per gallon (`mpg`) of fuel efficiency and have more than 100 horsepower (`hp`) - how many are there?
-
-```{r}
-
-
-```
-
--   Re-order the rows of `carsSub` by weight in increasing order Use `arrange()`
-
-```{r}
-
-
-```
-
--   Create a new variable in `carsSub` called `wt2`, which is equal to `wt^2`, using `mutate()` Use piping `%>%`:
-
-```{r}
-
-```
 
 ## Github:
 
-- Add information to the README.md file that  includes names of each file in folder and what it is.
+- Add information to the README.md file. Specify what files are in your repository and provide a brief description. 
 
 - When done, commit your assignment (with the message "Finished Lab 1") and push it to your Github repository. You need to upload a rendered version of the qmd file in html (click render above). 
