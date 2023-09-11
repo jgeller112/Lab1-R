@@ -13,6 +13,7 @@ execute:
 
 # Lab 1 - R
 
+
 ## Packages:
 
 -   Load `tidyverse` package
@@ -180,4 +181,6 @@ veclist <- list(x=1:5, y=2:6, z=3:7)
 
 ## Github:
 
--   When done, commit your assignment (with the message "Finished Lab 1") and push it to your Github repository. You need to upload a rendered version of the qmd file in html (click render above)
+- Add information to the README.md file that  includes names of each file in folder and what it is.
+
+- When done, commit your assignment (with the message "Finished Lab 1") and push it to your Github repository. You need to upload a rendered version of the qmd file in html (click render above). 
