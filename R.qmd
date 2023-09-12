@@ -3,7 +3,7 @@ title: "R Lab"
 author: "Student Name"
 format:
       html:
-        code-fold: true
+        code-fold: false
         toc: true
 editor: visual
 execute: 
@@ -23,80 +23,314 @@ After each problem, comment what your code does
 ## Basic math and commands:
 
 -   Try adding more than two numbers
+
+    ```{r}
+    #
+
+    ```
+
 -   Try playing around with the number of spaces between numbers and the plus sign Do the number of spaces matter?
+
+    ```{r}
+    #
+
+    ```
+
 -   Try hitting enter when you are half way through the command (eg, 10+) What happens?
+
+    ```{r}
+    #
+
+    ```
+
 -   Multiply 3 by 14 and subtract 5 from the result
+
+    ```{r}
+    #
+
+    ```
+
 -   Raise 5 to the power of 4 (hint: use \^ for exponents)
+
+    ```{r}
+    #
+    ```
+
 -   Divide 267563 by 1235
+
+    ```{r}
+    #
+    ```
 
 ## Logical Operators:
 
 -   Use logical operations to get R to agree that "two plus two equals five" is FALSE
+
+    ```{r}
+    #
+    ```
+
 -   Use logical operations to test whether 8 raised to the power 13 is less than 15 \^ 9
+
+    ```{r}
+    #
+
+    ```
 
 ## Functions:
 
 -   Use the sqrt() function to calculate the square root of 789
+
+    ```{r}
+    #
+
+    ```
+
 -   Round 2456 to the nearest whole number using round()
+
+    ```{r}
+    #
+
+    ```
+
 -   Round 2456 to two decimal places using round()
+
+    ```{r}
+    #
+
+    ```
+
 -   R has a factorial() function that calculates the factorial function, n! (eg, 5! = 5\*4\*3\*2\*1) Use it to calculate 25!, and take note of the way that R formats the answer
+
+    ```{r}
+    #
+
+    ```
+
 -   Use factorial() to (try to) calculate 2000!, and note the answer that R gives
+
+    ```{r}
+    #
+
+    ```
+
 -   Create a function called `get_factorial` that returns the factorial of a number. Try to write in a warning if negative numbers are used.
+
+    ```{r}
+    #
+
+    ```
 
 ## Variables:
 
 -   Create a variable called potato whose value corresponds to the number of potatoes you've eaten in the last week Or something equally ridiculous
+
+    ```{r}
+    #
+
+    ```
+
 -   Print out the value of potato by typing the variable name
+
+    ```{r}
+    #
+
+    ```
+
 -   Do it again using the print() function
+
+    ```{r}
+    #
+
+    ```
+
 -   Calculate the square root of potato using the sqrt() function
+
+    ```{r}
+    #
+
+    ```
+
 -   Print out the value of potato again to verify that the value of potato hasn't changed
+
+    ```{r}
+    #
+
+    ```
+
 -   Reassign the value of potato to potato \* 2
+
+    ```{r}
+    #
+
+    ```
+
 -   Print out the new value of potato to verify that it has changed
+
+    ```{r}
+    #
+
+    ```
+
 -   Try making a character (string) variable (cheese) and a logical variable (happiness)
+
+    ```{r}
+    #
+
+    ```
+
 -   Try creating a variable with a "missing" value NA
+
+    ```{r}
+    #
+
+
+    ```
 
 ## Vectors:
 
 -   Create a numeric vector with three elements using c()
+
+    ```{r}
+    #
+
+    ```
+
 -   Create a character vector with three elements using c()
+
+    ```{r}
+    #
+
+    ```
+
 -   Create a numeric vector called age whose elements contain the ages of three people you know, where the names of each element correspond to the names of those people
+
+    ```{r}
+    #
+
+    ```
+
 -   Use indexing to get R to print out the first element of one of the vectors you created
+
+    ```{r}
+    #
+
+    ```
+
 -   Use negative indices to get R to print out everything except the first element of that vector
+
+    ```{r}
+    #
+
+    ```
+
 -   Use logical indexing to return all the ages of all people in age greater than 20
+
+    ```{r}
+    #
+
+    ```
+
 -   Use indexing by name to return the age of one of the people whose ages you've stored in age
+
+    ```{r}
+    #
+
+    ```
 
 ## Manipualting data frames/tibbles
 
-We will be working with a dataset from the “Kaggle” website, which hosts competitions for prediction and machine learning. More details on this dataset are here: https://www.kaggle.com/c/DontGetKicked/overview/background
+We will be working with a dataset from the "Kaggle" website, which hosts competitions for prediction and machine learning. More details on this dataset are here: https://www.kaggle.com/c/DontGetKicked/overview/background
 
-- Bring the dataset into R. The dataset is located at: https://jhudatascience.org/intro_to_r/data/kaggleCarAuction.csv. You can use the link, download it, or use whatever method you like for getting the file. Once you get the file, read the dataset in using read_csv() and assign it the name cars.
+-   Bring the dataset into R. The dataset is located at: https://jhudatascience.org/intro_to_r/data/kaggleCarAuction.csv. You can use the link, download it, or use whatever method you like for getting the file. Once you get the file, read the dataset in using read_csv() and assign it the name cars.
 
-- import the data “dictionary” from https://jhudatascience.org/intro_to_r/data/Carvana_Data_Dictionary_formatted.txt. Use the read_tsv() function and assign it the name “key”.
+    ```{r}
+    #
+    ```
 
-- Preview the data so that you can see the names of the columns. There are several possible functions to do this.
-Determine the class of the first three columns using str().
+-   import the data "dictionary" from https://jhudatascience.org/intro_to_r/data/Carvana_Data_Dictionary_formatted.txt. Use the read_tsv() function and assign it the name "key".
 
-- How many cars (rows) are in the dataset? How many variables (columns) are recorded for each car?
+    ```{r}
+    #
 
--  Filter out (i.e., remove) any vehicles that cost less than or equal to $5000 (“VehBCost”) or that have missing values. Replace the original “cars” object by reassigning the new filtered dataset to “cars_filt”. How many vehicles are left after filtering?
+    ```
 
-- From this point on, work with the filtered “cars_filt” dataset from the above question. Given the average car loan today is 70 months, create a new variable (column) called “MonthlyPrice” that shows the monthly cost for each car (Divide “VehBCost” by 70). Check to make sure the new column is there.
+-   Preview the data so that you can see the names of the columns. There are several possible functions to do this. Determine the class of the first three columns using str().
 
-- What is the range of the manufacture year (“VehYear”) of the vehicles?
+    ```{r}
+    #
 
-- How many different vehicle manufacturers/makes (“Make”) are there?
+    ```
 
--  How many different vehicle models (“Model”) are there?
+-   How many cars (rows) are in the dataset? How many variables (columns) are recorded for each car?
 
-- Which vehicle color group had the highest mean acquisition cost paid for the vehicle at time of purchase, and what was this cost?
+    ```{r}
+    #
 
-Hint: Use group_by() with summarize(). To determine the column that corresponds to “acquisition cost paid for the vehicle at time of purchase”, check the “key” corresponding to the data dictionary that you imported above.
+    ```
 
-  - Extend on the code you wrote. Use the arrange() function to sort the output by mean acquisition cost.
+-   Filter out (i.e., remove) any vehicles that cost less than or equal to \$5000 ("VehBCost") or that have missing values. Replace the original "cars" object by reassigning the new filtered dataset to "cars_filt". How many vehicles are left after filtering?
 
--  Select all columns in “cars_filt” where the column names starts with “Veh”. Then,  summarize across these columns
+    ```{r}
+    #
 
-- Using “cars_filt”, create a new binary (TRUEs and FALSEs) column to indicate if the car has an automatic transmission. Call the new column “is_automatic”.
+    ```
+
+-   From this point on, work with the filtered "cars_filt" dataset from the above question. Given the average car loan today is 70 months, create a new variable (column) called "MonthlyPrice" that shows the monthly cost for each car (Divide "VehBCost" by 70). Check to make sure the new column is there.
+
+    ```{r}
+    #
+
+    ```
+
+-   What is the range of the manufacture year ("VehYear") of the vehicles?
+
+    ```{r}
+    #
+
+    ```
+
+-   How many different vehicle manufacturers/makes ("Make") are there?
+
+    ```{r}
+    #
+
+    ```
+
+-   How many different vehicle models ("Model") are there?
+
+    ```{r}
+    #
+
+    ```
+
+-   Which vehicle color group had the highest mean acquisition cost paid for the vehicle at time of purchase, and what was this cost?
+
+    ```{r}
+    #
+
+    ```
+
+    Hint: Use group_by() with summarize(). To determine the column that corresponds to "acquisition cost paid for the vehicle at time of purchase", check the "key" corresponding to the data dictionary that you imported above.
+
+-   Extend on the code you wrote. Use the arrange() function to sort the output by mean acquisition cost.
+
+    ```{r}
+    #
+
+    ```
+
+-   Select all columns in "cars_filt" where the column names starts with "Veh". Then, summarize across these columns
+
+    ```{r}
+    #
+    ```
+
+-   Using "cars_filt", create a new binary (TRUEs and FALSEs) column to indicate if the car has an automatic transmission. Call the new column "is_automatic".
+
+    ```{r}
+    #
+    ```
 
 ## Lists
 
@@ -106,13 +340,27 @@ veclist <- list(x=1:5, y=2:6, z=3:7)
 
 -   Add another variable to the above list which is the same length as the others
 
-- Grab the first vector from the list
+    ```{r}
+    #
 
-- Grab the y vector from the list by name
+    ```
 
+-   Grab the first vector from the list
+
+    ```{r}
+    #
+
+    ```
+
+-   Grab the y vector from the list by name
+
+    ```{r}
+    #
+
+    ```
 
 ## Github:
 
-- Add information to the README.md file. Specify what files are in your repository and provide a brief description. 
+-   Add information to the README.md file. Specify what files are in your repository and provide a brief description.
 
-- When done, commit your assignment (with the message "Finished Lab 1") and push it to your Github repository. You need to upload a rendered version of the qmd file in html (click render above). 
+-   When done, commit your assignment (with the message "Finished Lab 1") and push it to your Github repository. You need to upload a rendered version of the qmd file in html (click render above).
